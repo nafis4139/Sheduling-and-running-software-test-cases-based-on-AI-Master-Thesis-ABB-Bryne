@@ -56,7 +56,18 @@ The key stages of the script include:
    ```bash
    pip install requests
 
-3. Update the Configuration
+3. **Deploy Self-Hosted Agents**
+
+   This script uses two self-hosted agents:
+      - Nafis5
+      - Nafis6
+
+   You can do the same by following the below steps :
+      - Install the [Azure Pipelines Agent](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/windows-agent?view=azure-devops&tabs=IP-V4) on your machine.
+      - Register them under the same Agent Pool (POOL_ID) in Azure DevOps.
+      - Ensure both agents are online and idle before running the script.
+  
+4. **Update the Configuration**
 
    In the script, set your environment variables and values:
    ```python
