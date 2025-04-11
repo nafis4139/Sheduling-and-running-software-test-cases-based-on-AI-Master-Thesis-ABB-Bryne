@@ -26,7 +26,7 @@ The key stages of the script include:
 4. **Schedule Test Cases** across agents
 5. **Create Test Runs**
 6. **Trigger Releases** with targeted stages
-7. **Manually Start Correct Stage**
+7. **Automatically Start Correct Stage**
 8. **Monitor Execution**
 9. **Print Results**
 
@@ -70,4 +70,36 @@ The key stages of the script include:
 
 ## 🧠 How It Works
 
-1. 
+1. Test cases are tagged with agent preferences using curly braces in their names:
+
+   ```vbnet
+   Example: "Login Test {Nafis5, Nafis6}"
+
+2. Script fetches test points and determines which agent should run each case based on:
+
+   - Preferred agents in the name
+   - Availability from the Azure DevOps agent pool
+   - Historical execution data (for now, simulated in this script)
+  
+3. Two separate test runs are created — one per agent.
+   
+4. Release pipelines are triggered with different stages (N5 Stage or N6 Stage) depending on the assigned agent.
+
+5. Each release starts its corresponding stage.
+
+6. The script monitors both the release status and test execution in parallel and prints out results.
+   
+---
+
+## 📊 Sample Output
+
+```yaml
+✔ Created Test Run 1234 for Nafis5
+✔ Created Test Run 1235 for Nafis6
+🚀 Triggered Release ID: 4567 for Test Run 1234
+✅ Manually started stage 'N5 Stage' (Environment ID: 789)
+Test Case ID: 22; Point ID: 7; Name: "Checkout Test", Assigned Agents: Nafis5
+     → Status: PASSED, Executed on: Nafis5, Execution Time: 12.3 sec
+
+
+   
