@@ -16,7 +16,7 @@ This Python script automates **test execution** and **release deployment** acros
 
 ---
 
-## 📁 Project Structure
+### 📁 Project Structure
 
 The key stages of the script include:
 
@@ -32,7 +32,7 @@ The key stages of the script include:
 
 ---
 
-## ⚙ Prerequisites
+### ⚙ Prerequisites
 
 - Python 3.7+
 - Active Azure DevOps organization
@@ -42,7 +42,7 @@ The key stages of the script include:
 
 ---
 
-## 🔧 Setup
+### 🔧 Setup
 
 1. **Clone the Repository**
 
@@ -68,7 +68,7 @@ The key stages of the script include:
    
 ---
 
-## 🧠 How It Works
+### 🧠 How It Works
 
 1. Test cases are tagged with agent preferences using curly braces in their names:
 
@@ -91,7 +91,7 @@ The key stages of the script include:
    
 ---
 
-## 📊 Sample Output
+### 📊 Sample Output
 
    ```yaml
    Step 01: Fetching Test Plan...
@@ -190,11 +190,15 @@ The key stages of the script include:
 
 ---
 
-## 📊 Historical Data
+### 📊 Historical Data
 
 ---
 
-## 🛠️ Future Improvements
+### 🛠️ Future Improvements
+
+---
+
+## 🔄 Part 02: Scheduling and Optimization of Automated TestCases Based on AI
 
 ---
 
