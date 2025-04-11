@@ -1,1 +1,1 @@
-# Sheduling-and-running-software-test-cases-based-on-AI-Master-Thesis-ABB-Bryne-
+# Sheduling and Running Software TestCases Based on AI (Master Thesis | ABB Bryne)
