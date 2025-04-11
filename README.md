@@ -186,10 +186,22 @@ The key stages of the script include:
    ✔ Test Run Results Fetched Successfully!
    
    ✔ Test execution completed!
+   ```
 
 ---
 
-## Test
+## 📊 Historical Data
+
+---
+
+## 🛠️ Future Improvements
+
+--
+
+## 🙌 Acknowledgments
+
+Special thanks to Morten Mossige - our supervisor, for his continuous guidance and support.
+
 
 
 
