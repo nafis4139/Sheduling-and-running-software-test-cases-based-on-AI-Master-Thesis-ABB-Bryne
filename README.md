@@ -48,10 +48,26 @@ The key stages of the script include:
 
    ```bash
    git clone https://github.com/yourusername/azure-devops-test-release-automation.git
+   cd azure-devops-test-release-automation
 
 2. **Install Required Packages**
-(Only if you add new packages in the future; current code uses requests, which is standard)
-3. 
 
-4. 
-   cd azure-devops-test-release-automation
+   (Only if you add new packages in the future; current code uses requests, which is standard)
+   ```bash
+   pip install requests
+
+3. Update the Configuration
+
+   In the script, set your environment variables and values:
+   ```python
+   AZURE_ORG = "your_organization_name"
+   PROJECT = "your_project_name"
+   PAT = "your_personal_access_token"
+   SUITE_ID = your_suite_id          # e.g., 20
+   POOL_ID = your_pool_id            # e.g., 12
+   
+---
+
+## 🧠 How It Works
+
+1. 
