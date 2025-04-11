@@ -1,12 +1,12 @@
 # Sheduling and Running Software TestCases Based on AI (Master Thesis | ABB Bryne)
 
-# 🔄 Part 01: Azure DevOps Automated Test Run & Release Orchestration
+## 🔄 Part 01: Azure DevOps Automated Test Run & Release Orchestration
 
 This Python script automates **test execution** and **release deployment** across multiple agents in Azure DevOps. It dynamically assigns test cases based on agent availability and preferred assignments, then triggers separate release pipelines and test runs accordingly.
 
 ---
 
-## 🚀 Features
+### 🚀 Features
 
 - ✅ **Creates two separate test runs** for different agents
 - ✅ **Triggers two independent releases** with targeted stages
@@ -196,7 +196,7 @@ The key stages of the script include:
 
 ## 🛠️ Future Improvements
 
---
+---
 
 ## 🙌 Acknowledgments
 
