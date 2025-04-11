@@ -94,13 +94,6 @@ The key stages of the script include:
 ## 📊 Sample Output
 
 ```yaml
-✔ Created Test Run 1234 for Nafis5
-✔ Created Test Run 1235 for Nafis6
-🚀 Triggered Release ID: 4567 for Test Run 1234
-✅ Manually started stage 'N5 Stage' (Environment ID: 789)
-Test Case ID: 22; Point ID: 7; Name: "Checkout Test", Assigned Agents: Nafis5
-     → Status: PASSED, Executed on: Nafis5, Execution Time: 12.3 sec
-
 Step 01: Fetching Test Plan...
 Available Test Plans:
 ✔ Test Plan Name: ShoppingCart_TP (ID: 18)
