@@ -152,7 +152,7 @@ def get_agent_pool(pool_id):
 def fetch_agents_in_pool(pool_id, silent=False):    
     url = f"https://dev.azure.com/{AZURE_ORG}/_apis/distributedtask/pools/{pool_id}/agents?api-version=7.1-preview.1"
     if not silent:
-        print(f"\nAgent API: {url}")
+        print(f"Agent API: {url}")
     response = requests.get(url, headers=HEADERS)
     if response.status_code == 200:
         agents = response.json().get("value", [])
