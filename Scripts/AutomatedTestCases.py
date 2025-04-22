@@ -352,7 +352,7 @@ def monitor_release_and_tests(release_id, test_run_id, test_points):
     test_run_url = f"https://dev.azure.com/{AZURE_ORG}/{PROJECT}/_apis/test/runs/{test_run_id}?api-version=7.1"
     print(f"Release Pipeline ({release_id}) API: {release_url}")
     print(f"Test Run ({test_run_id}) API: {test_run_url}")
-    timeout = timedelta(minutes=2)          # Set timeout for monitoring
+    #timeout = timedelta(minutes=2)          # Set timeout for monitoring
     start_time = datetime.now()
     completed_stages = set()
     test_run_completed = False
