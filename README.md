@@ -75,9 +75,9 @@ The key stages of the script include:
    PROJECT = "your-project"
    PAT = "your-personal-access-token"
    TEST_PLAN_NAME = "your-plan"
-   SUITE_ID = "your-suite-id"
-   POOL_ID = "your-agent-pool-id"
-   RELEASE_PIPELINE_ID = "your-pipeline-definition-id"
+   SUITE_ID = your-suite-id
+   POOL_ID = your-agent-pool-id
+   RELEASE_PIPELINE_ID = your-pipeline-definition-id
    ARTIFACT_ALIAS = "_YourAlias"
    AGENT_01 = "your-preferred-agent"
    AGENT_02 = "your-preferred-agent"
