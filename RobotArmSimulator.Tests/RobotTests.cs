@@ -7,34 +7,34 @@ namespace RobotArmSimulator.Tests
     [TestClass]
     public class RobotTests
     {
-        [TestMethod]
-        public async Task ShortTest()
+        private async Task SimulateTest(Robot robot, int delayMs, bool shouldFail = false)
         {
-            var robot = new Robot();
-            await Task.Delay(1000); // Simulate 1 second
+            await Task.Delay(delayMs);
             robot.MoveTo(1, 2, 3);
-            Assert.AreEqual((1, 2, 3), robot.Position);
+            if (shouldFail)
+                Assert.Fail("Simulated failure for test scheduling analysis.");
         }
 
-        [TestMethod]
-        public async Task MediumTest()
-        {
-            var robot = new Robot();
-            await Task.Delay(5000); // Simulate 5 seconds
-            robot.Pick();
-            Assert.IsTrue(robot.HasObject);
-        }
+        [TestMethod] public async Task Test01() => await SimulateTest(new Robot(), 1000);
+        [TestMethod] public async Task Test02() => await SimulateTest(new Robot(), 2000);
+        [TestMethod] public async Task Test03() => await SimulateTest(new Robot(), 3000);
+        [TestMethod] public async Task Test04() => await SimulateTest(new Robot(), 4000);
+        [TestMethod] public async Task Test05() => await SimulateTest(new Robot(), 5000, shouldFail: true);
+        [TestMethod] public async Task Test06() => await SimulateTest(new Robot(), 6000);
+        [TestMethod] public async Task Test07() => await SimulateTest(new Robot(), 7000);
+        [TestMethod] public async Task Test08() => await SimulateTest(new Robot(), 8000);
+        [TestMethod] public async Task Test09() => await SimulateTest(new Robot(), 9000);
+        [TestMethod] public async Task Test10() => await SimulateTest(new Robot(), 10000);
 
-        [TestMethod]
-        public async Task LongTest()
-        {
-            var robot = new Robot();
-            await Task.Delay(30000); // Simulate 1 minute
-            robot.MoveTo(5, 5, 5);
-            robot.Pick();
-            robot.Place();
-            Assert.AreEqual((5, 5, 5), robot.Position);
-            Assert.IsFalse(robot.HasObject);
-        }
+        [TestMethod] public async Task Test11() => await SimulateTest(new Robot(), 2000);
+        [TestMethod] public async Task Test12() => await SimulateTest(new Robot(), 1000);
+        [TestMethod] public async Task Test13() => await SimulateTest(new Robot(), 15000, shouldFail: true);
+        [TestMethod] public async Task Test14() => await SimulateTest(new Robot(), 3000);
+        [TestMethod] public async Task Test15() => await SimulateTest(new Robot(), 5000);
+        [TestMethod] public async Task Test16() => await SimulateTest(new Robot(), 8000);
+        [TestMethod] public async Task Test17() => await SimulateTest(new Robot(), 12000);
+        [TestMethod] public async Task Test18() => await SimulateTest(new Robot(), 3000);
+        [TestMethod] public async Task Test19() => await SimulateTest(new Robot(), 1000);
+        [TestMethod] public async Task Test20() => await SimulateTest(new Robot(), 4000);
     }
 }
