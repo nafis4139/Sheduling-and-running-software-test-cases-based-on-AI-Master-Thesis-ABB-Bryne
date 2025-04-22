@@ -91,7 +91,6 @@ The key stages of the script include:
 1. Test cases are tagged with agent preferences using curly braces in their names:
 
    ```vbnet
-   Example:
    Test01 {Autobot1}
    Test02 {Autobot2}
    Test03 {Autobot1,Autobot2}
