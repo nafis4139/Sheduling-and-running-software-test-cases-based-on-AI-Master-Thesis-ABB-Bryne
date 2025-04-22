@@ -8,11 +8,11 @@ This Python script automates **test execution** and **release deployment** acros
 
 ### 🚀 Features
 
-- ✅ **Creates two separate test runs** for different agents
-- ✅ **Triggers two independent releases** with targeted stages
-- ✅ **Assigns test cases** to agents based on availability & preferences
-- ✅ **Launches different pipeline stages** based on the test run
-- ✅ **Monitors release & test run execution** and prints detailed results
+- ✅ **Creates Separate Test Runs** for different agents
+- ✅ **Triggers Independent Releases** with targeted stages
+- ✅ **Assigns Test Cases** to agents based on availability & embedded `{Agent}` tags
+- ✅ **Launches Different Pipeline Stages** based on the Test Run
+- ✅ **Monitors Release & Test Run Execution** and prints detailed results
 
 ---
 
@@ -36,8 +36,8 @@ The key stages of the script include:
 
 - Python 3.7+
 - Active Azure DevOps organization
-- A test plan (`ShoppingCart_TP`) and test suite with test cases
-- Release pipeline configured with stages (e.g., `N5 Stage`, `N6 Stage`)
+- A test plan (`RoboTestPlan`) and test suite with test cases
+- Release pipeline configured with stages (e.g., `Autobot1 Stage`, `Autobot2 Stage`)
 - Valid **Personal Access Token (PAT)** with appropriate permissions
 
 ---
@@ -59,8 +59,8 @@ The key stages of the script include:
 3. **Deploy Self-Hosted Agents**
 
    This script uses two self-hosted agents:
-      - Nafis5
-      - Nafis6
+      - Autobot1
+      - Autobot2
 
    You can do the same by following the below steps :
       - Install the [Azure Pipelines Agent](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/windows-agent?view=azure-devops&tabs=IP-V4) on your machine.
@@ -71,11 +71,18 @@ The key stages of the script include:
 
    In the script, set your environment variables and values:
    ```python
-   AZURE_ORG = "your_organization_name"
-   PROJECT = "your_project_name"
-   PAT = "your_personal_access_token"
-   SUITE_ID = your_suite_id          # e.g., 20
-   POOL_ID = your_pool_id            # e.g., 12
+   AZURE_ORG = "your-org"
+   PROJECT = "your-project"
+   PAT = "your-personal-access-token"
+   TEST_PLAN_NAME = "your-plan"
+   SUITE_ID = "your-suite-id"
+   POOL_ID = "your-agent-pool-id"
+   RELEASE_PIPELINE_ID = "your-pipeline-definition-id"
+   ARTIFACT_ALIAS = "_YourAlias"
+   AGENT_01 = "your-preferred-agent"
+   AGENT_02 = "your-preferred-agent"
+   TARGET_STAGE_01 = "your-targeted-stage"
+   TARGET_STAGE_02 = "your-targeted-stage"
    
 ---
 
@@ -84,7 +91,10 @@ The key stages of the script include:
 1. Test cases are tagged with agent preferences using curly braces in their names:
 
    ```vbnet
-   Example: "Login Test {Nafis5, Nafis6}"
+   Example:
+   Test01 {Autobot1}
+   Test02 {Autobot2}
+   Test03 {Autobot1,Autobot2}
 
 2. Script fetches test points and determines which agent should run each case based on:
 
@@ -92,9 +102,9 @@ The key stages of the script include:
    - Availability from the Azure DevOps agent pool
    - Historical execution data (for now, simulated in this script)
   
-3. Two separate test runs are created — one per agent.
+3. Separate test runs are created — one per agent.
    
-4. Release pipelines are triggered with different stages (N5 Stage or N6 Stage) depending on the assigned agent.
+4. Release pipelines are triggered with different stages depending on the assigned agent.
 
 5. Each release starts its corresponding stage.
 
