@@ -1,4 +1,4 @@
-# Sheduling and Running Software TestCases Based on AI (Master Thesis | ABB Bryne)
+# Scheduling and Running Software TestCases Based on AI (Master Thesis | ABB Bryne)
 
 ## 🔄 Part 01: Azure DevOps Automated Test Run & Release Orchestration
 
