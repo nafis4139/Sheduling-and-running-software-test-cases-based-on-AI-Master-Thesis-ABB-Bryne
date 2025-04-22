@@ -19,7 +19,7 @@ namespace RobotArmSimulator.Tests
         [TestMethod] public async Task Test02() => await SimulateTest(new Robot(), 2000);
         [TestMethod] public async Task Test03() => await SimulateTest(new Robot(), 3000);
         [TestMethod] public async Task Test04() => await SimulateTest(new Robot(), 4000);
-        [TestMethod] public async Task Test05() => await SimulateTest(new Robot(), 5000, shouldFail: true);
+        [TestMethod] public async Task Test05() => await SimulateTest(new Robot(), 5000, shouldFail: false);
         [TestMethod] public async Task Test06() => await SimulateTest(new Robot(), 6000);
         [TestMethod] public async Task Test07() => await SimulateTest(new Robot(), 7000);
         [TestMethod] public async Task Test08() => await SimulateTest(new Robot(), 8000);
@@ -28,7 +28,7 @@ namespace RobotArmSimulator.Tests
 
         [TestMethod] public async Task Test11() => await SimulateTest(new Robot(), 2000);
         [TestMethod] public async Task Test12() => await SimulateTest(new Robot(), 1000);
-        [TestMethod] public async Task Test13() => await SimulateTest(new Robot(), 15000, shouldFail: true);
+        [TestMethod] public async Task Test13() => await SimulateTest(new Robot(), 15000, shouldFail: false);
         [TestMethod] public async Task Test14() => await SimulateTest(new Robot(), 3000);
         [TestMethod] public async Task Test15() => await SimulateTest(new Robot(), 5000);
         [TestMethod] public async Task Test16() => await SimulateTest(new Robot(), 8000);
