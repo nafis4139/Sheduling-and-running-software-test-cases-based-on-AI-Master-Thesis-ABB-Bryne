@@ -4,28 +4,43 @@ trigger:
 pool:
   name: 'Autobots'
 
-steps:
-- task: DotNetCoreCLI@2
-  displayName: 'Restore packages'
-  inputs:
-    command: 'restore'
-    projects: '**/*.csproj'
+variables:
+  AZURE_DEVOPS_PAT: $(System.AccessToken)
 
-- task: DotNetCoreCLI@2
-  displayName: 'Build solution'
-  inputs:
-    command: 'build'
-    arguments: '--configuration Release'
-    projects: '**/*.csproj'
+stages:
+- stage: Build
+  jobs:
+  - job: BuildProject
+    pool:
+      name: 'Autobots'
+    steps:
+    - task: UseDotNet@2
+      inputs:
+        packageType: 'sdk'
+        version: '8.x'
+    - script: |
+        dotnet build --configuration Release --output $(Build.ArtifactStagingDirectory)
+      displayName: 'Build Project'
+    - script: |
+        dir $(Build.ArtifactStagingDirectory)
+      displayName: 'List Build Artifacts'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
 
-- task: VSTest@2
-  displayName: 'Run MSTest Tests and Associate with Azure DevOps Test Cases'
-  inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: |
-      **\RobotArmSimulator.Tests.dll
-      !**\obj\**
-    searchFolder: '$(System.DefaultWorkingDirectory)'
-    configuration: 'Release'
-    platform: 'Any CPU'
-    enableTestCaseAssociation: true
+- stage: Test
+  dependsOn: Build
+  jobs:
+  - job: RunTests
+    pool:
+      name: 'Autobots'
+    steps:
+    - download: current
+      artifact: drop
+    - script: |
+        python scripts/AutomatedTestCases.py
+      env:
+        AZURE_DEVOPS_PAT: $(AZURE_DEVOPS_PAT)
+      displayName: 'Trigger Azure DevOps Test Run via Python Script'
