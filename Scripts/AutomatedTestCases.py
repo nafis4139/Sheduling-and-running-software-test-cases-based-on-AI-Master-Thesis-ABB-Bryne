@@ -390,9 +390,9 @@ def monitor_release_and_tests(release_id, test_run_id, test_points):
                 print(f"❌ Failed to fetch test run status. Status Code: {test_response.status_code}")
                 print("Response:", test_response.text)
         # Timeout check
-        if datetime.now() - start_time > timeout:
-            print("⚠ Timeout reached! Some stages or tests are still running.\n")
-            break
+        #if datetime.now() - start_time > timeout:
+            #print("⚠ Timeout reached! Some stages or tests are still running.\n")
+            #break
         time.sleep(20)
 # Fetch Test Run Results
 def fetch_test_run_results(test_run_id, test_points):
