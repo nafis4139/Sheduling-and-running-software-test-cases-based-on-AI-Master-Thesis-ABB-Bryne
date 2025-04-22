@@ -1,0 +1,31 @@
+trigger:
+- main
+
+pool:
+  name: 'Autobots'
+
+steps:
+- task: DotNetCoreCLI@2
+  displayName: 'Restore packages'
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build solution'
+  inputs:
+    command: 'build'
+    arguments: '--configuration Release'
+    projects: '**/*.csproj'
+
+- task: VSTest@2
+  displayName: 'Run MSTest Tests and Associate with Azure DevOps Test Cases'
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\RobotArmSimulator.Tests.dll
+      !**\obj\**
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    configuration: 'Release'
+    platform: 'Any CPU'
+    enableTestCaseAssociation: true
