@@ -129,9 +129,6 @@ The key stages of the script include:
    ✔ Test Case ID: 3; Point ID: 1; Case Name: Test01 {Autobot1}; Assigned Agents: Autobot1
    ✔ Test Case ID: 4; Point ID: 2; Case Name: Test02 {Autobot2}; Assigned Agents: Autobot2
    ✔ Test Case ID: 5; Point ID: 3; Case Name: Test03 {Autobot1,Autobot2}; Assigned Agents: Autobot1, Autobot2
-   .
-   .
-   .
    
    Step 05: Fetching Available Agent Pools and Agents...
    Available Agent Pools:
@@ -148,16 +145,10 @@ The key stages of the script include:
    ✔ Test Cases Assigned to Autobot1:
      - Test01 {Autobot1} (ID: 3)
      - Test03 {Autobot1,Autobot2} (ID: 5)
-   .
-   .
-   .
 
    ✔ Test Cases Assigned to Autobot2:
      - Test02 {Autobot2} (ID: 4)
      - Test05 {Autobot2} (ID: 7)
-   .
-   .
-   .
    
    Step 08: Fetching Latest Build...
    Available Builds:
@@ -192,24 +183,18 @@ The key stages of the script include:
         → Status: PASSED, Executed on: NAFIS (Autobot1), Execution Time: 3.02 sec
    Test Case ID: 6; Point ID: 4; Name: Test04 {Autobot1}, Assigned Agents: Autobot1
         → Status: PASSED, Executed on: NAFIS (Autobot1), Execution Time: 4.01 sec
-   .
-   .
-   .
    ✔ Test Run Results Fetched Successfully!
    
    ▶ Monitoring Release 19 for Test Run 20...
+   Stage: Autobot2 Stage → Status: SUCCEEDED 
    Test Run ID 20 → Status: COMPLETED
-   Fetching Test Results from: https://dev.azure.com/mnaffuad/RobotArmSimulator/_apis/test/Runs/20/results?api-version=7.1
    Test Run (20) Results :
    Test Case ID: 4; Point ID: 2; Name: Test02 {Autobot2}, Assigned Agents: Autobot2
         → Status: PASSED, Executed on: NAFIS (Autobot1), Execution Time: 2.01 sec
    Test Case ID: 7; Point ID: 5; Name: Test05 {Autobot2}, Assigned Agents: Autobot2
         → Status: PASSED, Executed on: NAFIS (Autobot1), Execution Time: 5.01 sec
-   .
-   .
-   .
    ✔ Test Run Results Fetched Successfully!
-   Stage: Autobot2 Stage → Status: SUCCEEDED   
+     
    ✔ Test execution completed!
    ```
 
