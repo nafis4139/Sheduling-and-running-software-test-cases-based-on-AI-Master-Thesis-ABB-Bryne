@@ -8,6 +8,8 @@ import json
 import base64
 import time
 from datetime import datetime, timedelta
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 
 # Azure DevOps Configuration
 AZURE_ORG = "mnaffuad"
