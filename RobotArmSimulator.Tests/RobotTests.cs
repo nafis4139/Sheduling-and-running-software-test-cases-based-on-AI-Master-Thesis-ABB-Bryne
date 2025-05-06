@@ -33,7 +33,7 @@ namespace RobotArmSimulator.Tests
 
         [TestMethod]
         [TestCategory("TestCaseId:7")]
-        public async Task Test05() => await SimulateTest(new Robot(), 5000, shouldFail: true);
+        public async Task Test05() => await SimulateTest(new Robot(), 1000, shouldFail: true);
 
         [TestMethod]
         [TestCategory("TestCaseId:8")]
