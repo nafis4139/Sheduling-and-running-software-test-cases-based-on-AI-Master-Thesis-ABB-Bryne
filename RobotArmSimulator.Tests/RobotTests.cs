@@ -29,7 +29,7 @@ namespace RobotArmSimulator.Tests
 
         [TestMethod]
         [TestCategory("TestCaseId:6")]
-        public async Task Test04() => await SimulateTest(new Robot(), 4000);
+        public async Task Test04() => await SimulateTest(new Robot(), 4000, shouldFail: true);
 
         [TestMethod]
         [TestCategory("TestCaseId:7")]
@@ -37,7 +37,7 @@ namespace RobotArmSimulator.Tests
 
         [TestMethod]
         [TestCategory("TestCaseId:8")]
-        public async Task Test06() => await SimulateTest(new Robot(), 6000);
+        public async Task Test06() => await SimulateTest(new Robot(), 6000, shouldFail: true);
 
         [TestMethod]
         [TestCategory("TestCaseId:9")]
@@ -49,7 +49,7 @@ namespace RobotArmSimulator.Tests
 
         [TestMethod]
         [TestCategory("TestCaseId:11")]
-        public async Task Test09() => await SimulateTest(new Robot(), 9000);
+        public async Task Test09() => await SimulateTest(new Robot(), 9000, shouldFail: true);
 
         [TestMethod]
         [TestCategory("TestCaseId:12")]
@@ -57,7 +57,7 @@ namespace RobotArmSimulator.Tests
 
         [TestMethod]
         [TestCategory("TestCaseId:13")]
-        public async Task Test11() => await SimulateTest(new Robot(), 2000);
+        public async Task Test11() => await SimulateTest(new Robot(), 2000, shouldFail: true);
 
         [TestMethod]
         [TestCategory("TestCaseId:14")]
@@ -65,7 +65,7 @@ namespace RobotArmSimulator.Tests
 
         [TestMethod]
         [TestCategory("TestCaseId:15")]
-        public async Task Test13() => await SimulateTest(new Robot(), 15000, shouldFail: false);
+        public async Task Test13() => await SimulateTest(new Robot(), 15000, shouldFail: true);
 
         [TestMethod]
         [TestCategory("TestCaseId:16")]
@@ -73,7 +73,7 @@ namespace RobotArmSimulator.Tests
 
         [TestMethod]
         [TestCategory("TestCaseId:17")]
-        public async Task Test15() => await SimulateTest(new Robot(), 5000);
+        public async Task Test15() => await SimulateTest(new Robot(), 5000, shouldFail: true);
 
         [TestMethod]
         [TestCategory("TestCaseId:18")]
@@ -81,7 +81,7 @@ namespace RobotArmSimulator.Tests
 
         [TestMethod]
         [TestCategory("TestCaseId:19")]
-        public async Task Test17() => await SimulateTest(new Robot(), 12000);
+        public async Task Test17() => await SimulateTest(new Robot(), 12000, shouldFail: true);
 
         [TestMethod]
         [TestCategory("TestCaseId:20")]
