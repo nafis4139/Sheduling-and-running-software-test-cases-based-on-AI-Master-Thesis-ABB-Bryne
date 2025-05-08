@@ -24,8 +24,10 @@ RELEASE_PIPELINE_ID = 1                 # Release Pipeline ID
 ARTIFACT_ALIAS = "_RobotArmSolution"    # Artifact Alias in Release Pipeline
 AGENT_01 = "Autobot1"                   # Agent Name 1
 AGENT_02 = "Autobot2"                   # Agent Name 2
+AGENT_03 = "Autobot3"                   # Agent Name 3
 TARGET_STAGE_01 = "Autobot1 Stage"      # Target Stage for Agent 1
 TARGET_STAGE_02 = "Autobot2 Stage"      # Target Stage for Agent 2
+TARGET_STAGE_03 = "Autobot3 Stage"      # Target Stage for Agent 3
 
 # Encode PAT for authentication
 auth_str = f":{PAT}".encode("utf-8")
@@ -315,8 +317,10 @@ def manually_start_correct_stage(release_id, agent_name):
             deploy_environment(release_id, env["id"], env["name"])
         elif agent_name == AGENT_02 and env["name"] == TARGET_STAGE_02:
             deploy_environment(release_id, env["id"], env["name"])
+        elif agent_name == AGENT_03 and env["name"] == TARGET_STAGE_03:
+            deploy_environment(release_id, env["id"], env["name"])
         else:
-            print(f"⏭ Skipping stage '{env['name']}' for agent '{agent_name}' (not required)")
+            print(f"⏭ Skipping stage '{env['name']}' for agent '{agent_name}' (not required)")   
 # To get Environment Variables from a Release
 def get_release_environments(release_id):
     url = f"https://vsrm.dev.azure.com/{AZURE_ORG}/{PROJECT}/_apis/release/releases/{release_id}?api-version=7.1-preview.7"
@@ -492,6 +496,8 @@ if __name__ == "__main__":
             target_stage = TARGET_STAGE_01
         elif agent == AGENT_02:
             target_stage = TARGET_STAGE_02
+        elif agent == AGENT_03:
+            target_stage = TARGET_STAGE_03
         else:
             print(f"⚠ Unknown agent: {agent}. Skipping.")
             continue

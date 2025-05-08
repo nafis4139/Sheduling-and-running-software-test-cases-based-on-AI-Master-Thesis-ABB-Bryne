@@ -14,26 +14,26 @@ AUTH = HTTPBasicAuth("", PAT)
 
 # === ID to New Title Mapping ===
 rename_map = {
-    3:  "Test01 {Autobot1}",
+    3:  "Test01 {Autobot1}", 
     4:  "Test02 {Autobot2}",
     5:  "Test03 {Autobot1,Autobot2}",
     6:  "Test04 {Autobot1}",
-    7:  "Test05 {Autobot2}",
-    8:  "Test06 {Autobot1,Autobot2}",
-    9:  "Test07 {Autobot1}",
-    10: "Test08 {Autobot2}",
-    11: "Test09 {Autobot1,Autobot2}",
+    7:  "Test05 {Autobot3}",
+    8:  "Test06 {Autobot1,Autobot3}",
+    9:  "Test07 {Autobot2,Autobot3}",
+    10: "Test08 {Autobot1,Autobot2,Autobot3}",
+    11: "Test09 {Autobot3}",
     12: "Test10 {Autobot1}",
     13: "Test11 {Autobot2}",
     14: "Test12 {Autobot1,Autobot2}",
-    15: "Test13 {Autobot1}",
-    16: "Test14 {Autobot2}",
-    17: "Test15 {Autobot1,Autobot2}",
+    15: "Test13 {Autobot3}",
+    16: "Test14 {Autobot1,Autobot3}",
+    17: "Test15 {Autobot2,Autobot3}",
     18: "Test16 {Autobot1}",
     19: "Test17 {Autobot2}",
-    20: "Test18 {Autobot1,Autobot2}",
-    21: "Test19 {Autobot1}",
-    22: "Test20 {Autobot2}"
+    20: "Test18 {Autobot3}",
+    21: "Test19 {Autobot1,Autobot2}",
+    22: "Test20 {Autobot1,Autobot2,Autobot3}"
 }
 
 # === PATCH each Test Case Title ===
