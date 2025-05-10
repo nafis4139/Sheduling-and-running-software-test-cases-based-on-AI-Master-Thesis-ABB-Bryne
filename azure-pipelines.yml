@@ -44,3 +44,9 @@ stages:
       env:
         AZURE_DEVOPS_PAT: $(AZURE_DEVOPS_PAT)
       displayName: 'Trigger Azure DevOps Test Run via Python Script'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: "$(Build.ArtifactStagingDirectory)"
+        artifactName: "Logs"
+        publishLocation: 'Container'
+      displayName: 'Upload Test Logs to Artifacts'
