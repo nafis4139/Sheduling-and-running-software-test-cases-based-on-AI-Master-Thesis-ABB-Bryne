@@ -20,9 +20,9 @@ This project automates software test execution and release orchestration in Azur
 ---
 
 ### 📁 Script Location
-```plaintext
+   ```plaintext
    /scripts/AutomatedTestCasesWithLogsNBuild.py
-```
+   ```
 This is the main script. Run it locally to initiate the entire DevOps workflow.
 
 ---
