@@ -2,6 +2,7 @@
 ### Trigger Two Release ✅
 ### Launch Different Stages in Each Release ✅
 ### Use Different Agents for Different Stages ✅
+### Log Files Should be added
 
 import requests
 import json
