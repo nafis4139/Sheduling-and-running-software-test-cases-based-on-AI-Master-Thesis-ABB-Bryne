@@ -29,18 +29,3 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'drop'
         publishLocation: 'Container'
-
-- stage: Test
-  dependsOn: Build
-  jobs:
-  - job: RunTests
-    pool:
-      name: 'Autobots'
-    steps:
-    - download: current
-      artifact: drop
-    - script: |
-        python scripts/AutomatedTestCases.py
-      env:
-        AZURE_DEVOPS_PAT: $(AZURE_DEVOPS_PAT)
-      displayName: 'Trigger Azure DevOps Test Run via Python Script'

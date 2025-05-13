@@ -54,7 +54,6 @@ def upload_test_results(run_id):
         print(f"❌ Failed to fetch results for run {run_id}: {response.status_code}")
         print(response.text)
 
-# ✅ Example usage
-run_ids = [52,53]  # Update with actual run IDs from your test history
+run_ids = [52,53]  
 for run_id in run_ids:
     upload_test_results(run_id)
