@@ -32,11 +32,11 @@ namespace RobotArmSimulator.Tests
 
         [TestMethod]
         [TestCategory("TestCaseId:6")]
-        public async Task Test04() => await SimulateTest(new Robot(), 4000, 0.0); // never fail
+        public async Task Test04() => await SimulateTest(new Robot(), 4000, 1.0); // always fail
 
         [TestMethod]
         [TestCategory("TestCaseId:7")]
-        public async Task Test05() => await SimulateTest(new Robot(), 1000, 1.0); // always fail
+        public async Task Test05() => await SimulateTest(new Robot(), 1000, 0.0); // never fail
 
         [TestMethod]
         [TestCategory("TestCaseId:8")]
@@ -52,7 +52,7 @@ namespace RobotArmSimulator.Tests
 
         [TestMethod]
         [TestCategory("TestCaseId:11")]
-        public async Task Test09() => await SimulateTest(new Robot(), 1000, 0.2);
+        public async Task Test09() => await SimulateTest(new Robot(), 1000, 0.0);
 
         [TestMethod]
         [TestCategory("TestCaseId:12")]
@@ -68,7 +68,7 @@ namespace RobotArmSimulator.Tests
 
         [TestMethod]
         [TestCategory("TestCaseId:15")]
-        public async Task Test13() => await SimulateTest(new Robot(), 5000, 0.3);
+        public async Task Test13() => await SimulateTest(new Robot(), 5000, 0.0);
 
         [TestMethod]
         [TestCategory("TestCaseId:16")]

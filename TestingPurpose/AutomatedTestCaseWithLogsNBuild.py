@@ -261,7 +261,7 @@ def trigger_new_build():
     payload = {
         "definition": {"id": BUILD_PIPELINE_ID},
         "reason": "manual",
-        "sourceBranch": "refs/heads/main"  # Adjust branch as needed
+        "sourceBranch": "refs/heads/master" 
     }
     print("🚀 Triggering new build...")
     response = requests.post(build_url, headers=HEADERS, json=payload)
@@ -284,7 +284,7 @@ def trigger_new_build():
             break
         build_status = build_status_resp.json().get("status")
         result = build_status_resp.json().get("result")
-        print(f"🔄 Build {build_id} status: {build_status} | result: {result}")
+        #print(f"🔄 Build {build_id} status: {build_status} | result: {result}")
         if build_status == "completed":
             if result != "succeeded":
                 print(f"❌ Build failed or was cancelled. Status: {result}")
