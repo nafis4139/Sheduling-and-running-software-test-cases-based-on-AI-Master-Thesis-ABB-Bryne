@@ -20,7 +20,6 @@ This project automates software test execution and release orchestration in Azur
 ---
 
 ### 📁 Script Location
-
 ```plaintext
    /scripts/AutomatedTestCasesWithLogsNBuild.py
 ```
@@ -38,8 +37,7 @@ This is the main script. Run it locally to initiate the entire DevOps workflow.
 - Azure Cosmos DB instance with SQL (Core) API
 - Required Python packages:
    ```bash
-   pip install requests azure-cosmos
-   
+   pip install requests azure-cosmos 
 ---
 
 ### 🔧 Setup
