@@ -39,29 +39,23 @@ This is the main script. Run it locally to initiate the entire DevOps workflow.
    ```bash
    pip install requests azure-cosmos 
 ---
-
 ### 🔧 Setup
 
 1. **Install Required Packages**
-
    (Only if you add new packages in the future; current code uses requests, which is standard)
    ```bash
    pip install requests azure-cosmos
-
 2. **Deploy Self-Hosted Agents**
-
    This script uses three self-hosted agents:
       - Autobot1
       - Autobot2
       - Autobot3
-
    You can do the same by following the below steps :
       - Install the [Azure Pipelines Agent](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/windows-agent?view=azure-devops&tabs=IP-V4) on your machine.
       - Register them under the same Agent Pool (POOL_ID) in Azure DevOps.
       - Ensure both agents are online and idle before running the script.
   
 3. **Update the Configuration**
-
    In the script, set your environment variables and values. For example,
    ```python
    AZURE_ORG = "your-org"
@@ -73,31 +67,22 @@ This is the main script. Run it locally to initiate the entire DevOps workflow.
    ARTIFACT_ALIAS = "_YourAlias"
    AGENT_01 = "your-preferred-agent"
    TARGET_STAGE_01 = "your-targeted-stage"
-   
 ---
 
 ### 🧠 How It Works
-
 1. Test cases are tagged with agent preferences using curly braces in their names:
-
    ```vbnet
    Test01 {Autobot1}
    Test02 {Autobot2}
    Test03 {Autobot1,Autobot2}
-
 2. Script fetches test points and determines which agent should run each case based on:
-
    - Preferred agents in the name
    - Availability from the Azure DevOps agent pool
-  
 3. Separate test runs are created — one per agent.
-   
 4. Release pipelines are triggered with different stages depending on the assigned agent.
-
 5. Each release starts its corresponding stage.
-
 6. The script monitors both the release status and test execution in parallel and prints out results.
-   
+ 
 ---
 
 ### 📦 Cosmos DB
