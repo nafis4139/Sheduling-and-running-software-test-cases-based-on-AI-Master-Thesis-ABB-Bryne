@@ -39,8 +39,7 @@ This is the main script. Run it locally to initiate the entire DevOps workflow.
 - Required Python packages:
    ```bash
    pip install requests azure-cosmos
-
-
+   
 ---
 
 ### 🔧 Setup
