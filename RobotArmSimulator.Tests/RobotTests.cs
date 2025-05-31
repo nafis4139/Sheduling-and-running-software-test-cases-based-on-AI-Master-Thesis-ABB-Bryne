@@ -10,7 +10,7 @@ namespace RobotArmSimulator.Tests
     {
         private static readonly Random _random = new Random();
 
-        private async Task SimulateTest(Robot robot, int delayMs, double failProbability = 0.2)
+        private async Task SimulateTest(Robot robot, int delayMs, double failProbability)
         {
             await Task.Delay(delayMs);
             robot.MoveTo(1, 2, 3);
