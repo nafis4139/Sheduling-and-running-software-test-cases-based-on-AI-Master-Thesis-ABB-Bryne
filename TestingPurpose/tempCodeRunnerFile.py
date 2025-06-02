@@ -1,1 +1,1 @@
-last_sync
+test_priority_summary
