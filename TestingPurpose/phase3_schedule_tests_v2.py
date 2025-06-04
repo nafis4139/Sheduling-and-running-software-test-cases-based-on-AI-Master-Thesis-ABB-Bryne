@@ -31,7 +31,8 @@ if status == pywraplp.Solver.OPTIMAL:
 
     print(f"\n📌 Selected {len(selected)} out of {len(df)} test cases.")
     print(selected[["testCaseId", "testCaseTitle", "Q_value", "avgTime"]])
-    print(f"\n⏱ Total Scheduled Time: {selected['avgTime'].sum():.2f} sec")
+    print(f"\n⏱ Total Available Time: {MAX_TOTAL_TIME} sec")
+    print(f"⏱ Total Scheduled Time: {selected['avgTime'].sum():.2f} sec")
     print(f"⭐ Total Q Value: {selected['Q_value'].sum():.4f}")
 
     # Save selected schedule
