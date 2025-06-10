@@ -514,7 +514,7 @@ if __name__ == "__main__":
 
     # 🔽 NEW: Filter test points using scheduled_tests.csv
     import pandas as pd
-    scheduled_df = pd.read_csv("CosmosDB/scheduled_tests_qlearning_solved.csv")
+    scheduled_df = pd.read_csv("CosmosDB/scheduled_tests_qlearning_solved_cpsat.csv")
     scheduled_ids = scheduled_df["testCaseId"].astype(str).tolist()
 
     # Keep only test points whose testCaseId is in the scheduled list
